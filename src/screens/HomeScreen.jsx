@@ -4,13 +4,14 @@ import AppBar from "../components/home/AppBar";
 import { Octicons } from "@expo/vector-icons";
 import deli from '../../assets/uu.jpeg'
 import { MaterialCommunityIcons } from "@expo/vector-icons";
+import Onboarding from "./Onboarding";
 const HomeScreen = ({ navigation }) => {
   return (
     <FlatList
       data={[0]}
       renderItem={({ item }) => (
         <SafeAreaView className="p-4 bg-white h-screen">
-          {/* <Onboarding/> */}
+         <Onboarding/> 
           <AppBar />
           <TouchableOpacity
             onPress={() => {
