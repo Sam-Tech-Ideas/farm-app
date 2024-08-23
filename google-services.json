@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1038028862358",
+    "project_id": "ecommerce-project-103ba",
+    "storage_bucket": "ecommerce-project-103ba.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1038028862358:android:b0188c855e30abaa2b63b7",
+        "android_client_info": {
+          "package_name": "com.farm.grocery"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyANFcf2DGSmyHTgZzxlQJ7gzLLEowCC8wg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

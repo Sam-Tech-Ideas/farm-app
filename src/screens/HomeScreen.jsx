@@ -1,18 +1,33 @@
-import { View, Text, TextInput, TouchableOpacity, ImageBackground, FlatList, ScrollView, Image } from "react-native";
+import {
+  View,
+  Text,
+  TextInput,
+  TouchableOpacity,
+  ImageBackground,
+  FlatList,
+  ScrollView,
+  Image,
+} from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import AppBar from "../components/home/AppBar";
 import { Octicons } from "@expo/vector-icons";
-import deli from '../../assets/uu.jpeg'
+import deli from "../../assets/uu.jpeg";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
-import Onboarding from "./Onboarding";
+
+import ProductList from "../components/home/ProductList";
+import { StatusBar } from "expo-status-bar";
+
 const HomeScreen = ({ navigation }) => {
+
   return (
+
+    
     <FlatList
       data={[0]}
+      showsVerticalScrollIndicator={false}
       renderItem={({ item }) => (
-        <SafeAreaView className="p-4 bg-white h-screen">
-         <Onboarding/> 
-          <AppBar />
+        <SafeAreaView className="p-4 bg-white h-full">
+           <AppBar navigation={navigation} />
           <TouchableOpacity
             onPress={() => {
               navigation.navigate("Ca");
@@ -51,102 +66,18 @@ const HomeScreen = ({ navigation }) => {
             </View>
           </TouchableOpacity>
           <View className="flex-row items-center justify-between">
- <Text className="text-md font-semibold ">Freshly stocked</Text>
-          <TouchableOpacity>
-            <Text className="text-sm font-light text-green-600">
-              See all
-            </Text>
+            <Text className="text-md font-semibold ">Freshly stocked</Text>
+            <TouchableOpacity>
+              <Text className="text-sm font-light text-green-600">See all</Text>
             </TouchableOpacity>
           </View>
-         
+
           <ScrollView horizontal showsHorizontalScrollIndicator={false}>
-            <View className="flex-row items-center gap-x-1 w-full">
-             
-              <View className=" h-48 w-36 rounded-lg shadow-lg m-2 ">
-                <TouchableOpacity
-                  onPress={() => {
-                    navigation.navigate("Details");
-                  }}
-                >
-                  <Image
-                    source={{
-                      uri: "https://blog.jungseed.com/wp-content/uploads/2020/05/Main-scaled.jpg",
-                    }}
-                    className="h-32  object-cover rounded-t-lg"
-                  />
-                </TouchableOpacity>
+            <ProductList navigation={navigation} />
+          </ScrollView>
 
-                <View className="flex-col mt-2">
-                  <Text className="text-sm font-semibold">Green pepper</Text>
-                  <View className="flex-row items-center justify-between mt-1">
-                    <Text className="text-xs font-light">Zeto Shop</Text>
-                    <TouchableOpacity className="flex-row items-center bg-green-600 justify-center p-1 ">
-                      <MaterialCommunityIcons
-                        name="basket-outline"
-                        size={18}
-                        color="white"
-                      />
-                    </TouchableOpacity>
-                  </View>
-                </View>
-              </View>
-              <View className=" h-48 w-36 rounded-lg shadow-lg m-2 ">
-                <TouchableOpacity
-                  onPress={() => {
-                    navigation.navigate("Details");
-                  }}
-                >
-                  <Image
-                    source={{
-                      uri: "https://blog.jungseed.com/wp-content/uploads/2020/05/Main-scaled.jpg",
-                    }}
-                    className="h-32  object-cover rounded-t-lg"
-                  />
-                </TouchableOpacity>
-
-                <View className="flex-col mt-2">
-                  <Text className="text-sm font-semibold">Green pepper</Text>
-                  <View className="flex-row items-center justify-between mt-1">
-                    <Text className="text-xs font-light">Zeto Shop</Text>
-                    <TouchableOpacity className="flex-row items-center bg-green-600 justify-center p-1 ">
-                      <MaterialCommunityIcons
-                        name="basket-outline"
-                        size={18}
-                        color="white"
-                      />
-                    </TouchableOpacity>
-                  </View>
-                </View>
-              </View>
-              <View className=" h-48 w-36 rounded-lg shadow-lg m-2 ">
-                <TouchableOpacity
-                  onPress={() => {
-                    navigation.navigate("Details");
-                  }}
-                >
-                  <Image
-                    source={{
-                      uri: "https://blog.jungseed.com/wp-content/uploads/2020/05/Main-scaled.jpg",
-                    }}
-                    className="h-32  object-cover rounded-t-lg"
-                  />
-                </TouchableOpacity>
-
-                <View className="flex-col mt-2">
-                  <Text className="text-sm font-semibold">Green pepper</Text>
-                  <View className="flex-row items-center justify-between mt-1">
-                    <Text className="text-xs font-light">Zeto Shop</Text>
-                    <TouchableOpacity className="flex-row items-center bg-green-600 justify-center p-1 ">
-                      <MaterialCommunityIcons
-                        name="basket-outline"
-                        size={18}
-                        color="white"
-                      />
-                    </TouchableOpacity>
-                  </View>
-                </View>
-              </View>
-            </View>
+          <ScrollView className="mt-4" horizontal showsHorizontalScrollIndicator={false}>
+            <ProductList navigation={navigation} />
           </ScrollView>
         </SafeAreaView>
       )}

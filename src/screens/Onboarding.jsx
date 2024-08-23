@@ -6,13 +6,14 @@ import order from '../../assets/ord.png'
 import shop from '../../assets/grocery.png'
 
 
-const Onboarding = () => {
+const Onboarding = ({navigation}) => {
   return (
     <OnboardFlow
       primaryButtonStyle={{
         backgroundColor: "green",
         borderRadius: 10,
       }}
+      
 
       titleStyles={{
         color: "black",
@@ -41,6 +42,8 @@ const Onboarding = () => {
         },
       ]}
       type={"fullscreen"}
+
+    
     />
   );
 }
